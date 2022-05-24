@@ -11,3 +11,14 @@ const videogames = [
     {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
     {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG', 'La cosa más puto bonita que he visto nunca'], score: 10},
 ]
+
+const onlyRPGVideogames = videogames.filter(
+    elem => elem.genders.find(g => g === "RPG") != undefined
+);
+
+const total = onlyRPGVideogames.reduce( (acc, actual) => {
+    return acc + actual.score;
+}, 0);
+
+const media = total / onlyRPGVideogames.length;
+console.log(media);
